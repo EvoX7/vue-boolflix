@@ -5,7 +5,7 @@
         <input
           class="form-control me-2"
           type="search"
-          placeholder="Search movie"
+          placeholder="movies or tv series"
           aria-label="Search"
           v-model="searchInput"
           @keyup.enter="$emit('search', searchInput)"

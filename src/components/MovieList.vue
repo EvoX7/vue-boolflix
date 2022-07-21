@@ -3,11 +3,20 @@
     <div class="row m-auto">
       <h1 class="mb-5 mt-5 fw-bold">Your selected movies</h1>
       <div class="col-12 d-flex flex-wrap mt-3">
-        <Card
+        <MoviesCard
           class="col-2 mb-3 mx-3 card"
           v-for="movie in movies"
-          :key="movie"
+          :key="movie.id"
           :movies="movie"
+        />
+      </div>
+
+      <div class="col-12 d-flex flex-wrap mt-3">
+        <SeriesCard
+          class="col-2 mb-3 mx-3 card"
+          v-for="tvShow in series"
+          :key="tvShow.id"
+          :series="tvShow"
         />
       </div>
     </div>
@@ -15,15 +24,18 @@
 </template>
 
 <script>
-import Card from "./Card.vue";
+import MoviesCard from "./MoviesCard.vue";
+import SeriesCard from "./SeriesCard.vue";
+
 export default {
   name: "MovieList",
 
   components: {
-    Card,
+    MoviesCard,
+    SeriesCard,
   },
 
-  props: ["movies"],
+  props: ["movies", "series"],
 };
 </script>
 
