@@ -1,12 +1,16 @@
 <template>
   <div class="card">
-      <div class="card-body">
-        <h4 class="card-title text-white fw-bold">{{movies.title}}</h4>
-        <h5 class="card-title text-white fw-bold">{{movies.original_title}}</h5>
-        <p class="card-text fw-bold">{{movies.original_language}}</p>
-        <p class="card-text">{{movies.vote_average}}</p>
-      </div>
+    <div class="card-body d-flex flex-column">
+      <h4 class="card-title fw-bold">{{ movies.title }}</h4>
+      <span>Original Title:</span>
+      <h6 class="card-title fw-bold">{{ movies.original_title }}</h6>
+      <span>Original Language:</span>
+      <p class="card-text fw-bold">{{ movies.original_language }}</p>
+      <span>Average vote:</span>
+      <p class="card-text">{{ movies.vote_average }}</p>
     </div>
+    
+  </div>
 </template>
 
 <script>
@@ -17,12 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-
 li {
-    list-style: none;
-}
-
-.card {
-   
+  list-style: none;
 }
 </style>

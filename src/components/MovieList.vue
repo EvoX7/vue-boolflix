@@ -1,8 +1,15 @@
 <template>
-  <div class="row p-5">
-    <h1 class="mb-5 fw-bold">Your selected movies</h1>
-    <div class="col-10 m-auto d-flex flex-wrap mt-3">
-      <Card class="col-2 mb-4" v-for="movie in movies" :key="movie" :movies="movie" />
+  <div class="container">
+    <div class="row m-auto">
+      <h1 class="mb-5 mt-5 fw-bold">Your selected movies</h1>
+      <div class="col-12 d-flex flex-wrap mt-3">
+        <Card
+          class="col-2 mb-3 mx-3 card"
+          v-for="movie in movies"
+          :key="movie"
+          :movies="movie"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -20,5 +27,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 </style>
