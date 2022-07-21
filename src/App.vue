@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <SearchBar />
     <Main />
     <MoviesList />
     <Card />
@@ -8,7 +9,9 @@
 </template>
 
 <script>
+import axios from "axios";
 import Header from "./components/Header.vue";
+import SearchBar from "./components/SearchBar.vue";
 import Main from "./components/Main.vue";
 import MovieList from "./components/MovieList.vue";
 import Card from "./components/Card.vue";
@@ -17,6 +20,7 @@ export default {
   name: "App",
   components: {
     Header,
+    SearchBar,
     Main,
     MovieList,
     Card,

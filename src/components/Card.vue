@@ -1,13 +1,15 @@
 <template>
   <div>
     <ul>
-      <li></li>
+      <li>card</li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Card",
+};
 </script>
 
 <style>
