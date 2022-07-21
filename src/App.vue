@@ -34,10 +34,10 @@ export default {
 
   methods: {
     movieSearch: function () {
-      axios.get("https://api.themoviedb.org/3/search/movie?api_key=695f1e2cdece6cafb341504fdfa86fd0")
+      axios.get("https://api.themoviedb.org/3/search/movie?api_key=695f1e2cdece6cafb341504fdfa86fd0&language=it-IT&query=")
         .then((response) => {
         this.movies = response.data.results;
-        console.log(this.movies)
+        console.log(movieSearch)
       });
     },
   },
