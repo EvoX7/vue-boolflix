@@ -1,21 +1,29 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container d-flex justify-content-center">
-      <form class="d-flex">
+      <div class="d-flex">
         <input
           class="form-control me-2"
           type="search"
           placeholder="Search movie"
           aria-label="Search"
-        />
-        <button class="btn btn-dark" type="submit">Search</button>
-      </form>
+          v-model="searchInput"
+          @keyup.enter="$emit('search', searchInput)"
+          />
+        <button class="btn btn-dark" @click="$emit('search', searchInput)">Search</button>
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+    data: function () {
+        return {
+            searchInput: "",
+        }
+    }
+};
 </script>
 
 <style lang="scss">

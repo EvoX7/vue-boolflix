@@ -1,17 +1,25 @@
 <template>
   <header>
-      <SearchBar />
+      <SearchBar @search="doSearch" />
   </header>
 </template>
 
 <script>
-import SearchBar from "./Header.vue"
+import SearchBar from "./SearchBar.vue"
 
 export default {
   name: "Header",
    components: {
     SearchBar,
   },
+
+  methods: {
+    doSearch: function (searchText) {
+      this.$emit('search', searchText);
+      
+
+    }
+  }
 };
 </script>
 
