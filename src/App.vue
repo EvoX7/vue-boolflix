@@ -1,30 +1,28 @@
 <template>
   <div id="app">
-
     <!-- App vue is listening for Header emit  -->
     <Header @search="movieSearch" />
 
     <!-- Search information returns with props to MoviesList -->
-    <MoviesList :search="searchInput"/>
+    <MovieList :movies="movies" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import Header from "./components/Header.vue";
-import MoviesList from "./components/MovieList.vue";
+import MovieList from "./components/MovieList.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    MoviesList,
+    MovieList,
   },
 
   data: function () {
     return {
       movies: [],
-      searchInput: "",
     };
   },
 
@@ -38,11 +36,15 @@ export default {
         .then((response) => {
           this.movies = response.data.results;
 
-          // Function reassigned and then returne with props to MoviesList 
+          // Function reassigned and then returned with props to MoviesList
           this.searchInput = query;
           console.log(this.movies);
         });
     },
+
+     created() {
+    this.movieSearch();
+  },
   },
 };
 </script>
