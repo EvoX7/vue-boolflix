@@ -2,8 +2,9 @@
   <div>
 
      <!-- Tv series  -->
-    <div class="card" >
+    <div class="card h-100" >
       <div class="card-body d-flex flex-column">
+
         <h4 class="card-title fw-bold">{{ series.name }}</h4>
         <span>Original Title:</span>
         <h6 class="card-title fw-bold">{{ series.original_name }}</h6>
@@ -11,6 +12,7 @@
         <p class="card-text fw-bold">{{ series.original_language }}</p>
         <span>Average vote:</span>
         <p class="card-text">{{ series.vote_average }}</p>
+        
       </div>
     </div>
   </div>

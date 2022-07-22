@@ -9,9 +9,6 @@
           :key="movie.id"
           :movies="movie"
         />
-      </div>
-
-      <div class="col-12 d-flex flex-wrap mt-3">
         <SeriesCard
           class="col-2 mb-3 mx-3 card"
           v-for="tvShow in series"
@@ -19,6 +16,7 @@
           :series="tvShow"
         />
       </div>
+      
     </div>
   </div>
 </template>
@@ -28,7 +26,7 @@ import MoviesCard from "./MoviesCard.vue";
 import SeriesCard from "./SeriesCard.vue";
 
 export default {
-  name: "MovieList",
+  name: "DisplayList",
 
   components: {
     MoviesCard,
@@ -37,6 +35,8 @@ export default {
 
   props: ["movies", "series"],
 };
+
+
 </script>
 
 <style lang="scss">

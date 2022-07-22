@@ -3,27 +3,28 @@
     <!-- App vue is listening for Header $emit  -->
     <Header @search="movieSearch" @searching="seriesSearch" />
 
-    <!-- Search information returns with props to MoviesList -->
-    <MovieList :movies="movies" :series="series" />
+    <!-- Search information returns with props to DisplayList -->
+    <DisplayList :movies="movies" :series="series" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import Header from "./components/Header.vue";
-import MovieList from "./components/MovieList.vue";
+import DisplayList from "./components/DisplayList.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    MovieList,
+    DisplayList,
   },
 
   data: function () {
     return {
       movies: [],
       series: [],
+      
     };
   },
 
@@ -36,10 +37,10 @@ export default {
         )
         .then((response) => {
           this.movies = response.data.results;
-
-          // Function reassigned and then returned with props to MoviesList
-          this.searchInput = queryM;
           console.log(this.movies);
+        })
+        .catch((error) => {
+          console.log(error);
         });
     },
 
@@ -51,15 +52,12 @@ export default {
         )
         .then((response) => {
           this.series = response.data.results;
-
-          // Function reassigned and then returned with props to MoviesList
-          this.searchInput = queryS;
           console.log(this.series);
+        })
+        .catch((error) => {
+          console.log(error);
         });
-    },
-    created() {
-      this.movieSearch();
-      
+        
     },
   },
 };
