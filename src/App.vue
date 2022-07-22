@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- App vue is listening for Header $emit  -->
-    <Header @search="movieSearch" @searching="seriesSearch" />
+    <Header @search="makeSearch" />
 
     <!-- Search information returns with props to DisplayList -->
     <DisplayList :movies="movies" :series="series" />
@@ -57,8 +57,12 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-        
     },
+    makeSearch: function(query) {
+      this.movieSearch(query);
+      this.seriesSearch(query);
+
+    }
   },
 };
 </script>
