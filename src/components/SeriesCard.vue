@@ -4,7 +4,8 @@
      <!-- Tv series  -->
     <div class="card h-100" >
       <div class="card-body d-flex flex-column">
-        <img :src="'https://image.tmdb.org/t/p/w342/'+ series.poster_path">
+        <img v-if="series.poster_path == null" src="../assets/notfound.png">
+        <img v-else :src="`${posterUrl}`+ series.poster_path" >
         <h4 class="card-title fw-bold">{{ series.name }}</h4>
         <span>Original Title:</span>
         <h6 class="card-title fw-bold">{{ series.original_name }}</h6>
@@ -24,7 +25,14 @@
 export default {
   name: "SeriesCard",
   props: ["series"],
+  data() {
+    return {
+      posterUrl: "https://image.tmdb.org/t/p/w342/",
+    };
+  },
 };
+
+
 </script>
 
 <style lang="scss" scoped>

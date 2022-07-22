@@ -2,7 +2,9 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <img class="ms-3" id="logo" src="../assets/Awesome.png" alt="" />
+        <a href=".">
+          <img class="ms-3" id="logo" src="../assets/Awesome.png" alt="logo"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -23,16 +25,16 @@
               <a class="nav-link fw-bold" href="#">Tv Series</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="#">Film</a>
+              <a class="nav-link fw-bold" href="#">Movies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="#">Originali</a>
+              <a class="nav-link fw-bold" href="#">Originals</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="#">Aggiunti di recente</a>
+              <a class="nav-link fw-bold" href="#">New on Awesomeflix</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="#">La mia lista</a>
+              <a class="nav-link fw-bold" href="#">My List</a>
             </li>
           </ul>
           <SearchBar class="me-5" @search="doSearch" />
@@ -66,6 +68,6 @@ nav {
 
 #logo {
   width: 180px;
-  height: 50px;
+  height: 55px;
 }
 </style>

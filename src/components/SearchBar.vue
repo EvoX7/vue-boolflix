@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <div class=" me-5 container d-flex justify-content-center">
+    <div class="me-5 container d-flex justify-content-center">
       <div class="d-flex">
         <input
           class="form-control me-2"
@@ -9,8 +9,10 @@
           aria-label="Search"
           v-model="searchInput"
           @keyup.enter="$emit('search', searchInput)"
-          />
-        <button class="btn btn-danger" @click="$emit('search', searchInput)">Search</button>
+        />
+        <button class="btn btn-danger" @click="$emit('search', searchInput)">
+          Search
+        </button>
       </div>
     </div>
   </nav>
@@ -18,16 +20,13 @@
 
 <script>
 export default {
-    data: function () {
-        return {
-            searchInput: "",
-        }
-    }
+  data: function () {
+    return {
+      searchInput: "",
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
-
-
 </style>
