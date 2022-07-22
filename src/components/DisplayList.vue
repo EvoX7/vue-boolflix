@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row m-auto">
-      <h1 class="mb-5 mt-5 fw-bold">Your selected movies</h1>
+      <h1 class="mb-5 mt-5 text-white fw-bold">Unlimited movies, TV shows,<br> and more.</h1>
       <div class="col-12 d-flex flex-wrap mt-3">
         <MoviesCard
           class="col-2 mb-3 mx-3 card"
@@ -39,5 +39,11 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+h1 {
+  
+  font-size: 70px;
+}
+
 </style>

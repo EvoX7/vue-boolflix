@@ -3,16 +3,16 @@
     <!-- Movies  -->
     <div class="card h-100">
       <div class="card-body d-flex flex-column">
-        
+        <img :src="'https://image.tmdb.org/t/p/w342/'+ movies.poster_path">
         <h4 class="card-title fw-bold">{{ movies.title }}</h4>
         <span>Original Title:</span>
         <h6 class="card-title fw-bold">{{ movies.original_title }}</h6>
         <span>Original Language:</span>
-        <p class="card-text fw-bold"> <img v-if="movies.original_language == 'en'" src="https://www.sic-info.org/wp-content/uploads/2014/01/us.png" width="16px" height="11px">
-        <img v-else if :src="`https://www.sic-info.org/wp-content/uploads/2014/01/${movies.original_language}.png`" width="16px" height="11px">
+        <p class="card-text fw-bold"> <img class="flags" v-if="movies.original_language == 'en'" src="https://www.sic-info.org/wp-content/uploads/2014/01/us.png">
+        <img class="flags" v-else if :src="`https://www.sic-info.org/wp-content/uploads/2014/01/${movies.original_language}.png`">
          <span> </span></p>
         <span>Average vote:</span>
-        <p class="card-text">{{ movies.vote_average }}</p>
+        <p class="card-text">{{ movies.vote_average}}</p>
       </div>
     </div>
   </div>
@@ -25,15 +25,26 @@ export default {
 
   data() {
     return {
-      posterUrl: "https://image.tmdb.org/t/p/w342/",
-
     };
+  },
+
+    methods: {
+      AvgVote: function(AvgVote){
+        return Math.round (AvgVote / 2) 
+        
+      }
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 li {
   list-style: none;
+}
+
+.flags {
+  width: 18px;
+  height: 12px;
+  
 }
 </style>

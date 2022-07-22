@@ -24,7 +24,6 @@ export default {
     return {
       movies: [],
       series: [],
-      
     };
   },
 
@@ -58,11 +57,10 @@ export default {
           console.log(error);
         });
     },
-    makeSearch: function(query) {
+    makeSearch: function (query) {
       this.movieSearch(query);
       this.seriesSearch(query);
-
-    }
+    },
   },
 };
 </script>
@@ -76,5 +74,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+body {
+  background-color: #134e6f;
 }
 </style>
