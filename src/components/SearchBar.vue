@@ -10,7 +10,7 @@
           v-model="searchInput"
           @keyup.enter="$emit('search', searchInput)"
         />
-        <button class="btn btn-danger" @click="$emit('search', searchInput)">
+        <button class="btn btn-danger fw-bold" @click="$emit('search', searchInput)">
           Search
         </button>
       </div>
