@@ -63,6 +63,7 @@ export default {
     makeSearch: function (query) {
       this.movieSearch(query);
       this.seriesSearch(query);
+      this.populars = [];
     },
 
     // Display popular movies Homepage
@@ -79,6 +80,7 @@ export default {
           console.log(error);
         });
     },
+
   },
   mounted() {
       this.displayPopular();
