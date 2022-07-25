@@ -101,6 +101,5 @@ export default {
 
 body {
   background-color: #134e6f;
-  opacity: 0.9;
 }
 </style>
