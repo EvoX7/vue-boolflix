@@ -16,9 +16,9 @@
 
   <div class="container">
     <div class="row">
-      <PopularMovies class="col-2 mb-3 mx-3" v-for="popular in populars" :key="popular.id" :populars="popular" />
-      <MoviesCard class="col-2 mb-3 mx-3" v-for="movie in movies" :key="movie.id" :movies="movie" />
-      <SeriesCard class="col-2 mb-3 mx-3" v-for="tvShow in series" :key="tvShow.id" :series="tvShow" />
+      <PopularMovies class="col-2 mb-3 mx-5" v-for="popular in populars" :key="popular.id" :populars="popular" />
+      <MoviesCard class="col-2 mb-3 mx-5" v-for="movie in movies" :key="movie.id" :movies="movie" />
+      <SeriesCard class="col-2 mb-3 mx-5" v-for="tvShow in series" :key="tvShow.id" :series="tvShow" />
       
     </div>
   </div>

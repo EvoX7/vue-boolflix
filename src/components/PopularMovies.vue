@@ -82,7 +82,7 @@ li {
   height: 40vh;
   background-color: #cad1da;
   color: white;
-  transition: 0.1s;
+  transition: 0.3s;
 }
 
 .card:hover {
