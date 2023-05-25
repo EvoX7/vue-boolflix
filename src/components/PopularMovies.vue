@@ -72,17 +72,40 @@ li {
 }
 
 .info {
-  height: 36vh;
-  position: relative;
+  /* Remove the height property to allow the content to determine the height */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgb(24, 24, 24);
+  color: white;
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s;
 }
 
 .card {
-  width: 26vh;
-  height: 40vh;
+  /* Set a maximum height for the card */
+  max-height: 400px;
   background-color: #cad1da;
   color: white;
-  transition: 0.3s;
+  position: relative;
+  overflow: hidden; /* Add overflow: hidden to prevent text overflow */
+}
+
+.card-title {
+  /* Add ellipsis to long titles */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-body {
+  /* Set the card body to occupy remaining space */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -91,21 +114,20 @@ li {
 }
 
 .card:hover .info {
-  bottom: 34vh;
-  opacity: 1;
   visibility: visible;
-  background-color: rgb(24, 24, 24);
+  opacity: 1;
 }
 
 #text {
-  text-align: left;
-  font-size: 13px;
+  /* Limit text to 3 lines with ellipsis */
+  font-size: 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 9;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 
 .fa-star {
   color: #c83749;
